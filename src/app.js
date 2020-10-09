@@ -1,6 +1,10 @@
 const express = require("express");
 // const mongoose = require("mongoose");
-const user = require("./models/user");
+require("./models/user");
+require("./models/produto");
+require("./models/categoria");
+// const  = require("./models");
+// const  = require("./models");
 const routes = require("./api/modules/routes");
 const { database } = require("./database/db");
 

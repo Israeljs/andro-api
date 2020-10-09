@@ -6,7 +6,7 @@ class DataBase {
       }
     
     async database() {
-    await mongoose.connect('mongodb://localhost:27017/', {
+    await mongoose.connect(process.env.DB_CONNECT, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useFindAndModify: false
