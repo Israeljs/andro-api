@@ -3,7 +3,7 @@ const express = require("express");
 require("./models/user");
 require("./models/produto");
 require("./models/categoria");
-// const  = require("./models");
+require("./models/itenCardapio");
 // const  = require("./models");
 const routes = require("./api/modules/routes");
 const { database } = require("./database/db");
