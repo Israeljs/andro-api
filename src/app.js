@@ -4,6 +4,7 @@ require("./models/user");
 require("./models/produto");
 require("./models/categoria");
 require("./models/itenCardapio");
+require("./models/cliente");
 // const  = require("./models");
 const routes = require("./api/modules/routes");
 const { database } = require("./database/db");

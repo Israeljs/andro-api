@@ -14,6 +14,7 @@ class AuthController {
       const decoded = jwt.verify(token, process.env.SECRET_KEY)
 
       req.userId = decoded.id,
+      req.cienteId = decoded.id,
       
       // req.user = {
       //   email: decoded.email,

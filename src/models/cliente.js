@@ -22,12 +22,16 @@ const ClienteSchema = new Schema({
     trim: true,
   },
   dateBirth: {
-    type: Date,  
+    type: Date,
   },
   role: {
-    type: String,
-    enum: ['Cliente', 'Colaborador', 'Administrador'],
-    default: ['Cliente'],
+    type: [
+      {
+        type: String,
+        enum: ["Cliente", "Colaborador", "Administrador"],
+      },
+    ],
+    default: ["Cliente"],
   },
   password: {
     type: String,
