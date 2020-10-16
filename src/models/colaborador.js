@@ -25,9 +25,13 @@ const ColaboradorSchema = new Schema({
     type: Date,  
   },
   role: {
-    type: String,
-    enum: ['Cliente', 'Colaborador', 'Administrador'],
-    default: ['Cliente'],
+    type: [
+      {
+        type: String,
+        enum: ["Cliente", "Colaborador", "Administrador"],
+      },
+    ],
+    default: ["Colaborador"],
   },
   password: {
     type: String,

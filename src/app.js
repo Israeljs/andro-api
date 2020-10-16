@@ -1,11 +1,12 @@
 const express = require("express");
-// const mongoose = require("mongoose");
 require("./models/user");
 require("./models/produto");
 require("./models/categoria");
 require("./models/itenCardapio");
 require("./models/cliente");
-// const  = require("./models");
+require("./models/pedido");
+require("./models/colaborador");
+
 const routes = require("./api/modules/routes");
 const { database } = require("./database/db");
 
