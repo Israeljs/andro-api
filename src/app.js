@@ -1,11 +1,7 @@
 const express = require("express");
-require("./models/user");
-require("./models/produto");
-require("./models/categoria");
-require("./models/itenCardapio");
-require("./models/cliente");
-require("./models/pedido");
-require("./models/colaborador");
+const requireDir = require("require-dir");
+
+requireDir("./models");
 
 const routes = require("./api/modules/routes");
 const { database } = require("./database/db");
@@ -27,13 +23,14 @@ class AppController {
   routes() {
     this.app.use("/api", routes);
   }
-  // async database() {
-  //   await mongoose.connect("mongodb://localhost/tasksdb", {
-  //     useNewUrlParser: true,
-  //     useUnifiedTopology: true,
-  //     useFindAndModify: false
-  //   });
-  // }
 }
 
 module.exports = new AppController().app;
+
+// async database() {
+//   await mongoose.connect("mongodb://localhost/tasksdb", {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//     useFindAndModify: false
+//   });
+// }

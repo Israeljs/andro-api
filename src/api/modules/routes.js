@@ -5,10 +5,8 @@ const produtoRoutes = require("./produto");
 const itenCardapioRoutes = require("./itenCardapio");
 const clienteRoutes = require("./cliente");
 const pedidoRoutes = require("./pedido");
-const colaboradorRouter = require("./colaborador");
-const colaborador = require("../../models/colaborador");
-
-const { route } = require("./colaborador");
+const colaboradorRoutes = require("./colaborador");
+const cardapioRoutes = require("./cardapio");
 
 const routes = Router();
 
@@ -17,6 +15,7 @@ routes.use(produtoRoutes);
 routes.use(itenCardapioRoutes);
 routes.use(clienteRoutes);
 routes.use(pedidoRoutes);
-routes.use(colaboradorRouter)
+routes.use(colaboradorRoutes);
+routes.use(cardapioRoutes);
 
 module.exports = routes;
