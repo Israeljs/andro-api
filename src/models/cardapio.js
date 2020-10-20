@@ -11,10 +11,10 @@ const CardapioSchema = new Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "Colaborador",
   },
-  itemCardapio: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "ItenCardapio",
-  },
+  itemCardapio: [
+    {type: mongoose.Schema.Types.ObjectId,
+    ref: "ItenCardapio",}
+  ],
   created_at: {
     type: Date,
     default: Date.now,

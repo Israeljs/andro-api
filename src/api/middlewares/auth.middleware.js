@@ -28,3 +28,6 @@ class AuthController {
 }
 
 module.exports = new AuthController().auth
+
+
+//https://downloadcursos.top/bootcamp-gostack-11-rocketseat/
