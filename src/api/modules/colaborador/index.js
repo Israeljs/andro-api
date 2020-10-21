@@ -1,11 +1,12 @@
 const { Router } = require("express");
 const colaborador = require("./colaborador.controller");
 //const auth = require('../../middlewares/auth.middleware')
+const colaboradorAuth = require('../../middlewares/colaborador.auth.middleware')
 
 const colaboradorRoutes = Router();
 
 colaboradorRoutes.post("/colaborador", colaborador.create);
-colaboradorRoutes.get("/colaborador", colaborador.read);
+colaboradorRoutes.get("/colaborador", colaboradorAuth, colaborador.read);
 // colaboradorRoutes.post("/login", colaborador.login);
 
 // colaboradorRoutes.get("/colaborador/:id", auth, colaborador.showOne);
