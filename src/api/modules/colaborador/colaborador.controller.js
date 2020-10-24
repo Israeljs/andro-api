@@ -6,8 +6,12 @@ require("dotenv").config();
 
 class ColaboradorController {
   async create(req, res) {
-    //const { email } = req.body;
     try {
+      const { name, telefone, email, dateBirth, password } = req.body;
+      if (!name || !telefone || !email || !dateBirth || !password)
+        throw new Error("parametros invalidos!!");
+      if (await Colaborador.findOne({ email }))
+        return res.status(400).send({ error: "O usuário já existe!" });
       const colaborador = await Colaborador.create(req.body);
 
       colaborador.password = undefined;
@@ -42,7 +46,9 @@ class ColaboradorController {
     try {
       const { email, password } = req.body;
 
-      const colaborador = await Colaborador.findOne({ email }).select("+password");
+      const colaborador = await Colaborador.findOne({ email }).select(
+        "+password"
+      );
 
       if (!colaborador)
         return res.status(404).send({ error: "Usuário não encontrado!" });

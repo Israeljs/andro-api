@@ -9,7 +9,7 @@ clienteRoutes.get("/cliente", auth, cliente.read);
 // clienteRoutes.post("/login", cliente.login);
 
 // clienteRoutes.get("/cliente/:id", auth, cliente.showOne);
-// clienteRoutes.put("/cliente/:id", cliente.update);
+clienteRoutes.put("/cliente/:id", cliente.update);
 // clienteRoutes.delete("/cliente/:id", auth, cliente.delete);
 
 module.exports = clienteRoutes;
