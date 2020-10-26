@@ -46,15 +46,14 @@ class ClienteController {
   async showOne(req, res, next) {
     try {
       const { id } = req.params;
-      const user = await User.findById(id);
-      if (!user)
-        return res.status(400).send("user não encontrado no banco de dados!");
-      return res.json(user);
+      const cliente = await Cliente.findById(id);
+      if (!cliente)
+        return res.status(400).send("cliente não encontrado no banco de dados!");
+      return res.json(cliente);
     } catch (error) {
       return res.status(500).json({ error: error.message });
     }
   }
-
   async update(req, res) {
     try {
       // const { name, telefone, email, dateBirth, password } = req.body;
@@ -68,7 +67,6 @@ class ClienteController {
       // const { name, email, telefone, tasks } = req.body
       // if (!name || !email || !telefone || !tasks)
       var cliente = await Cliente.findById(id);
-      //const { tasks } = req.body;
       if (!cliente)
         return res
           .status(400)
