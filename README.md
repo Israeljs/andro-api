@@ -62,6 +62,12 @@ As requsições à API devem conter no header um token como no exemplo abaixo:
 ```shell
 Authorization: Bearer {token}
 ```
+### Contribuição
 
+Arthur Luis
 
+Emanuel Augusto
 
+Ibson Lima
+
+Israel Jeronimo
