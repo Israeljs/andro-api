@@ -13,8 +13,17 @@ class PedidoController {
   }
   async read(req, res) {
     try {
-      const pedido = await Pedido.find({});
-      return res.json(pedido);
+      await Pedido.find({})
+        .populate("cliente")
+        .populate({
+          path: "compoe",
+          populate: { path: "itemCardapio", populate: "produto" },
+        })
+        .exec(function (err, pedido) {
+          if (err) console.log(err);
+          //this will log all of the pedido with each of their posts
+          else return res.json(pedido);
+        });
     } catch (error) {
       return res.status(500).json({ error: error.message });
     }

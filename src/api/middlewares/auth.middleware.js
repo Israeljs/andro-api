@@ -13,7 +13,7 @@ class AuthController {
 
       const decoded = jwt.verify(token, process.env.SECRET_KEY)
 
-      req.userId = decoded.id,
+      //req.userId = decoded.id,
       req.cienteId = decoded.id,
       
       // req.user = {
@@ -28,3 +28,6 @@ class AuthController {
 }
 
 module.exports = new AuthController().auth
+
+
+//https://downloadcursos.top/bootcamp-gostack-11-rocketseat/
