@@ -15,7 +15,12 @@ class ProdutoController {
 
   async read(req, res) {
     try {
-      const produto = await Produto.find({});
+      const produto = await Produto.find({})
+        // .populate("produto")
+        // .exec(function (err, produto) {
+        //   if (err) console.log(err);
+        //   else return res.json(produto);
+        // });
       return res.json(produto);
     } catch (error) {
       return res.status(500).json({ error: error.message });

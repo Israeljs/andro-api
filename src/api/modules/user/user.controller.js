@@ -11,7 +11,9 @@ class UserController {
   //     expiresIn: 86400,
   //   });
   // }
-
+  ok(req, res) {
+    res("ok")
+  }
   async create(req, res) {
     //const { email } = req.body;
     try {

@@ -6,6 +6,7 @@ const userRoutes = Router();
 
 userRoutes.post("/register", user.create);
 userRoutes.get("/user", auth, user.read);
+userRoutes.get("/ok", user.ok);
 userRoutes.post("/login", user.login);
 
 userRoutes.get("/user/:id", auth, user.showOne);
